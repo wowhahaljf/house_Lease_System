@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.house.house.dao.HouseMapper">
+	<resultMap type="com.house.house.entity.House" id="BasicMap">
+		<id column="h_id" jdbcType="INTEGER" property="hID" />
+		<result column="house_desc" jdbcType="VARCHAR" property="houseDesc"/>
+		<result column="house_model" jdbcType="VARCHAR" property="houseModel"/>
+		<result column="house_area" jdbcType="VARCHAR" property="houseArea"/>
+		<result column="house_floor" jdbcType="VARCHAR" property="houseFloor"/>
+		<result column="house_type" jdbcType="VARCHAR" property="houseType"/>
+		<result column="house_price" jdbcType="VARCHAR" property="housePrice"/>
+		<result column="house_address" jdbcType="VARCHAR" property="houseAddress"/>
+		<result column="house_image" jdbcType="VARCHAR" property="houseImage"/>
+		<result column="community_name" jdbcType="VARCHAR" property="communityName"/>
+		<result column="house_linkman" jdbcType="VARCHAR" property="houseLinkMan"/>
+		<result column="house_oriented" jdbcType="VARCHAR" property="houseOriented"/>
+		<result column="house_detailes_img" jdbcType="VARCHAR" property="houseDetailsImg"/>
+		<result column="publisher" jdbcType="VARCHAR" property="publisher"/>
+		<result column="publish_time" jdbcType="VARCHAR" property="publishTime"/>
+		<result column="contract" jdbcType="VARCHAR" property="contract"/>
+		<result column="file_Name" jdbcType="VARCHAR" property="fileName"/>
+		<result column="status" jdbcType="INTEGER" property="status"/>
+	</resultMap>
+	<resultMap id="HouseLike" type="com.house.house.entity.userHouseLike">
+		<id column="u_like_id" jdbcType="INTEGER" property="uLikeId"/>
+		<result column="u_id" jdbcType="INTEGER" property="uid"/>
+		<result column="h_id" jdbcType="INTEGER" property="hid"/>
+		<result column="is_like" jdbcType="INTEGER" property="isLike"/>
+	</resultMap>
+	<resultMap id="HouseCollection" type="com.house.house.entity.UserHouseCollection">
+		<id column="u_col_id" jdbcType="INTEGER" property="uColId"/>
+		<result column="u_id" jdbcType="INTEGER" property="uid"/>
+		<result column="h_id" jdbcType="INTEGER" property="hid"/>
+		<result column="is_col" jdbcType="INTEGER" property="isCol"/>
+	</resultMap>
+	<resultMap id="CommentMap" type="com.house.house.entity.Comment">
+		<id column="c_id" jdbcType="INTEGER" property="cId"/>
+		<result column="h_id" jdbcType="INTEGER" property="hId"/>
+		<result column="u_id" jdbcType="INTEGER" property="uId"/>
+		<result column="u_nickname" jdbcType="VARCHAR" property="uNickName"/>
+		<result column="parent_id" jdbcType="INTEGER" property="parentId"/>
+		<result column="content" jdbcType="VARCHAR" property="content"/>
+		<result column="time" jdbcType="VARCHAR" property="time"/>
+		<result column="comment_num" jdbcType="INTEGER" property="commentNum"/>
+		<result column="like" jdbcType="INTEGER" property="like"/>
+	</resultMap>
+
+	<resultMap id="replyMapper" type="com.house.house.entity.Reply">
+		<id column="r_Id" jdbcType="INTEGER" property="rId"/>
+		<result column="c_id" jdbcType="INTEGER" property="cId"/>
+		<result column="h_id" jdbcType="INTEGER" property="hId"/>
+		<result column="u_id" jdbcType="INTEGER" property="uId"/>
+		<result column="from" jdbcType="VARCHAR" property="from"/>
+		<result column="fromId" jdbcType="INTEGER" property="fromId"/>
+		<result column="content" jdbcType="VARCHAR" property="content"/>
+		<result column="to" jdbcType="VARCHAR" property="to"/>
+		<result column="toId" jdbcType="INTEGER" property="toId"/>
+		<result column="comment_num" jdbcType="INTEGER" property="commentNum"/>
+		<result column="fromReplyId" jdbcType="INTEGER" property="fromReplyId"/>
+		<result column="like" jdbcType="INTEGER" property="like"/>
+	</resultMap>
+	<resultMap id="commentLikeMapper" type="com.house.house.entity.CommentLike">
+		<id column="cl_Id" jdbcType="INTEGER" property="clId"/>
+		<result column="c_id" jdbcType="INTEGER"	 property="cId"/>
+		<result column="u_id" jdbcType="INTEGER"	 property="uId"/>
+		<result column="like_status" jdbcType="INTEGER"	 property="likeStatus"/>
+	</resultMap>
+
+	<resultMap id="replyLikeMapper" type="com.house.house.entity.ReplyLike">
+		<id column="rl_id" jdbcType="INTEGER" property="rlId"/>
+		<result column="r_id" jdbcType="INTEGER" property="rId"/>
+		<result column="u_id" jdbcType="INTEGER" property="uId"/>
+		<result column="like_status" jdbcType="INTEGER" property="likeStatus"/>
+	</resultMap>
+
+	<!-- 首页信息查询 -->
+	<select id="findHomeInfo" resultMap="BasicMap">
+		SELECT
+			h_id,
+			house_desc,
+			house_model,
+			house_area,
+			house_type,
+			house_price,
+			house_floor,
+			house_address,
+			house_image
+		FROM
+			t_house
+		WHERE `status`=1
+	</select>
+	
+	<!-- 房屋详细信息 -->
+	<select id="findHouseDetailsById" parameterType="int" resultMap="BasicMap">
+		SELECT
+			h_id,
+			house_desc,
+			house_price,
+			house_type,
+			house_area,
+			house_floor,
+			community_name,
+			house_address,
+			house_image,
+			house_linkman,
+			house_model,
+			house_area,
+			house_oriented,
+			house_detailes_img,
+		       house.t_house.publisher,
+		       house.t_house.publish_time,
+		       house.t_house.contract,
+		       house.t_house.file_Name
+		FROM
+			t_house
+		WHERE
+			h_id=#{id} and `status`=1
+	</select>
+	
+	<insert id="addNewHouse" parameterType="com.house.house.entity.House">
+		insert into 
+			t_house 
+		values
+		(	0,
+			#{houseDesc},
+			#{houseModel},
+			#{houseArea},
+			#{houseFloor},
+			#{houseType},
+			#{housePrice},
+			#{houseAddress},
+			#{houseImage},
+			#{communityName},
+			#{houseLinkMan},
+			#{houseOriented},
+			#{houseDetailsImg},
+			#{publisher},
+			NOW(),
+		 	#{contract},
+		 	#{fileName},
+			0
+		)
+	</insert>
+
+
+    <!-- 查找用户发布的房源信息 -->
+	<select id="findHouseByUser" parameterType="com.house.house.entity.Page" resultMap="BasicMap">
+		select * from t_house where publisher = #{publisher} limit #{page},#{limit}
+	</select>
+	
+	<!-- 删除用户发布的房源信息 -->
+	<delete id="deleteUserHouse" parameterType="int">
+		delete from t_house where h_id=#{hID}
+	</delete>
+
+
+
+	<!-- 修改用户发布的房源信息 -->
+	<update id="updateHouse" parameterType="com.house.house.entity.House">
+		UPDATE t_house
+		SET 
+			house_desc = #{houseDesc},
+			house_model = #{houseModel},
+			house_area = #{houseArea},
+			house_floor = #{houseFloor},
+			house_type = #{houseType},
+			house_price = #{housePrice},
+			house_address = #{houseAddress},
+			house_oriented = #{houseOriented},
+			house_linkman = #{houseLinkMan},
+			community_name = #{communityName}
+		WHERE
+		    h_id=#{hID};
+	</update>
+	<update id="updateUserHouse" parameterType="com.house.house.entity.House">
+		UPDATE t_house
+		SET
+			house_desc = #{houseDesc},
+			house_model = #{houseModel},
+			house_area = #{houseArea},
+			house_floor = #{houseFloor},
+			house_type = #{houseType},
+			house_price = #{housePrice},
+			house_address = #{houseAddress},
+			house_image = #{houseImage},
+			house_oriented = #{houseOriented},
+			house_linkman = #{houseLinkMan},
+			community_name = #{communityName},
+			house_detailes_img = #{houseDetailsImg},
+		    contract = #{contract},
+		    file_Name = #{fileName}
+			WHERE
+				h_id=#{hID};
+	</update>
+
+	<!-- 条件搜索 -->
+	<select id="findHouseByLike" parameterType="string" resultMap="BasicMap">
+		SELECT
+			*
+		FROM
+			t_house h
+		WHERE
+			CONCAT(
+				h.community_name,
+				h.house_desc,
+				h.house_model
+			) LIKE CONCAT("%", #{keywords}, "%")
+	</select>
+	
+	<select id="findHouseOrderByDesc" resultMap="BasicMap">
+		SELECT * FROM t_house h WHERE h.status = 1 ORDER BY house_price DESC
+	</select>
+	
+	<select id="findHouseOrderByAsc" resultMap="BasicMap">
+		SELECT * FROM t_house h WHERE h.status = 1 ORDER BY house_price ASC
+	</select>
+
+	<select id="countUserHouse" resultType="java.lang.Integer" parameterType="com.house.house.entity.Page">
+		select count(*) from t_house where publisher=#{publisher}
+	</select>
+
+	<!--	用户发布评论-->
+	<insert id="submitUserComment" parameterType="com.house.house.entity.Comment" >
+		insert into t_comment values
+			(
+			 0,
+			 #{hId},
+			 #{uId},
+			 #{uNickName},
+			 #{parentId},
+			 #{content},
+			 NOW(),
+			 #{commentNum},
+			 #{like}
+			)
+	</insert>
+
+	<insert id="submitOthersComment" parameterType="com.house.house.entity.Reply">
+		insert into t_reply values
+			(
+			 0,
+			 #{cId},
+			 #{hId},
+			 #{uId},
+			 #{from},
+			 #{fromId},
+			 #{content},
+			 #{to},
+			 #{toId},
+			 #{fromReplyId},
+			 NOW(),
+			 #{commentNum},
+			 #{like}
+
+			)
+	</insert>
+
+
+
+	<update id="addFatherCommentCount" parameterType="int">
+		UPDATE t_reply
+		SET
+			comment_num= comment_num+1
+		WHERE
+			r_id=#{rId};
+	</update>
+
+	<update id="addRootCommentCount">
+		update t_comment
+		set
+			comment_num=comment_num+1
+		where
+			c_id=#{cId}
+
+	</update>
+
+	<!--	获取当前页的父级评论-->
+	<select id="getCommentList" resultMap="CommentMap" parameterType="int">
+		select * from t_comment where h_id =#{hId}
+	</select>
+	<!--	获取当前页的子级评论-->
+	<select id="getCommentSubList" resultMap="replyMapper" parameterType="int">
+		select * from t_reply where c_id =#{cId}
+	</select>
+
+	<!--		增加点赞数量-->
+	<update id="addRootLike" parameterType="com.house.house.entity.CommentLike" >
+		update t_comment
+		set
+			`like`=`like`+1
+		where
+			c_id=#{cId}
+	</update>
+	<insert id="addRootLikeUser" parameterType="com.house.house.entity.CommentLike">
+		insert into t_comment_like
+		values
+		(	0,
+			#{cId},
+			#{uId},
+			#{likeStatus}
+		)
+	</insert>
+
+	<update id="cancelRootLike" parameterType="com.house.house.entity.CommentLike">
+		update t_comment
+		set
+			`like`=`like`-1
+		where
+			c_id=#{cId}
+	</update>
+	<update id="cancelRootLikeUser" parameterType="com.house.house.entity.CommentLike">
+		update house.t_comment_like
+		set
+			like_status=0
+		where
+			c_id = #{cId} and u_id=#{uId} and cl_id=#{clId}
+	</update>
+	<update id="afterCancelAddLikeComment" parameterType="com.house.house.entity.CommentLike">
+		update house.t_comment_like
+		set
+			like_status=1
+		where
+			c_id = #{cId} and u_id=#{uId} and cl_id=#{clId}
+	</update>
+
+	<select id="getClId" resultMap="commentLikeMapper" parameterType="com.house.house.entity.CommentLike">
+		select * from t_comment_like
+		where c_id=#{cId} and u_id =#{uId}
+	</select>
+
+	<select id="getLikeStatus" resultMap="commentLikeMapper" parameterType="com.house.house.entity.CommentLike" >
+		select * from t_comment_like
+		where c_id=#{cId} and u_id =#{uId} and cl_id=#{clId}
+	</select>
+    <select id="getReplyLikeInfo" parameterType="int" resultMap="replyLikeMapper">
+		select * from t_reply_like
+		where  r_id=#{rId} and u_id=#{uId}
+	</select>
+	<select id="findHomeInfoAudit" resultType="com.house.house.entity.House">
+		SELECT
+			h_id,
+			house_desc,
+			house_price,
+			house_type,
+			house_area,
+			house_floor,
+			community_name,
+			house_address,
+			house_image,
+			house_linkman,
+			house_model,
+			house_area,
+			house_oriented,
+			house_detailes_img,
+		    publisher,
+		    publish_time,
+		    `status`,
+		    contract,
+		    `file_Name`
+		FROM
+			t_house
+
+	</select>
+	<select id="search" resultType="com.house.house.entity.House" resultMap="BasicMap" parameterType="string">
+	select * from t_house
+	where
+	   `status` = 1
+	   and( house_desc like CONCAT('%',#{input},'%')
+	   or house_type like CONCAT('%',#{input},'%')
+	   or community_name like CONCAT('%',#{input},'%')
+	   or house_address like CONCAT('%',#{input},'%')
+	   or house_oriented like CONCAT('%',#{input},'%'))
+
+	</select>
+	<select id="getHouseLike" resultType="com.house.house.entity.userHouseLike" resultMap="HouseLike" parameterType="int">
+		select * from t_user_house_like
+		where u_id=#{uid} and h_id =#{hid}
+	</select>
+
+
+
+	<insert id="addReplyLikeUser" parameterType="com.house.house.entity.ReplyLike">
+		insert into t_reply_like
+		values (
+		        0,
+		        #{rId},
+		        #{uId},
+		        #{likeStatus}
+			   )
+
+	</insert>
+<!--	插入房屋点赞记录-->
+    <insert id="houseLike" parameterType="int">
+		INSERT INTO `t_user_house_like`
+		values
+		(
+		 0,
+		 #{uid},
+		 #{hid},
+		 1
+		)
+	</insert>
+
+
+
+	<update id="addReplyLike" parameterType="com.house.house.entity.ReplyLike">
+		update house.t_reply
+		set
+			`like`=`like`+1
+		where r_id=#{rId}
+	</update>
+
+	<update id="cancelReplyLikeUser" parameterType="int" >
+		update t_reply_like
+		set
+			like_status=0
+		where r_id=#{rId} and u_id =#{uId}
+	</update>
+	<update id="cancelReplyLike" parameterType="int">
+		update house.t_reply
+		set
+			`like`=`like`-1
+		where r_id=#{rId}
+	</update>
+	<update id="afterCancelAddReplyLike" parameterType="int">
+		update t_reply_like
+		set
+			`like_status`=1
+		where rl_id=#{rlId}
+	</update>
+<!--	修改点赞状态-->
+	<update id="updateHouseLike" parameterType="int">
+		update t_user_house_like t
+		set t.is_like = case when t.is_like = 1 then 0 else 1 end
+		where u_like_id=#{id}
+	</update>
+
+	<!--	查阅用户本页房屋的收藏情况-->
+	<select id="getCollectionInfo" resultType="com.house.house.entity.UserHouseCollection" resultMap="HouseCollection" parameterType="int">
+		select * from t_user_house_collection
+		where u_id=#{uid} and h_id=#{hid}
+	</select>
+	<!--	修改房屋收藏情况-->
+	<update id="updateCol" parameterType="int" >
+		update t_user_house_collection t
+		set t.is_col =case when t.is_col = 1 then 0 else 1 end
+		where u_col_id =#{id}
+	</update>
+<!--	收藏房屋-->
+	<insert id="insertCol" parameterType="int">
+		insert into t_user_house_collection
+		values (
+		        0,
+		        #{uid},
+		        #{hid},
+		        1
+			   )
+	</insert>
+	<select id="getUserCollection" resultType="com.house.house.entity.UserHouseCollection" parameterType="int" resultMap="HouseCollection">
+		select * from t_user_house_collection
+		where u_id=#{uid} and is_col=1
+	</select>
+
+	<delete id="deleteCol" parameterType="int">
+		delete  from house.t_user_house_collection
+		where u_col_id=#{colId}
+	</delete>
+</mapper>

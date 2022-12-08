@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="044baad9-970d-4d7f-9948-a6a207b16712" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/static/layui/css/layui.css" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="20rLOs5SZTQgFD9pBB0xGHOJiVL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
+    <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/house" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../知识" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.52068967" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\86186\Desktop\others\house-leasing-system-master\src\main\java\com\house\house\entity\websocket" />
+      <recent name="C:\Users\86186\Desktop\others\house-leasing-system-master\src\main\java\com\house\house\entity" />
+      <recent name="C:\Users\86186\Desktop\others\house-leasing-system-master\src\main\webapp\WEB-INF\pages" />
+      <recent name="D:\IDEA workspace\house-rent-master\src\main\resources\static\img" />
+      <recent name="D:\IDEA workspace\house-rent-master\src\main\webapp\static\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\86186\Desktop\others\house-leasing-system-master\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\86186\Desktop\others\house-leasing-system-master\src\main\resources\static" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.house.house" />
+      <recent name="com" />
+      <recent name="com.house" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.house.house.utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.WymApplication">
+    <configuration name="JavaWebHouse.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/JavaWebHouse.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="wym [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="spring-boot:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="WymApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="house-rent-master" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.house.house.WymApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Database Script.JavaWebHouse.sql" />
+      <item itemvalue="Maven.wym [spring-boot:run]" />
+      <item itemvalue="Spring Boot.WymApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.JavaWebHouse.sql" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="044baad9-970d-4d7f-9948-a6a207b16712" name="Default Changelist" comment="" />
+      <created>1636797730140</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636797730140</updated>
+      <workItem from="1636797732931" duration="9000" />
+      <workItem from="1636797754918" duration="10997000" />
+      <workItem from="1636936181421" duration="1237000" />
+      <workItem from="1636938027203" duration="720000" />
+      <workItem from="1636971927023" duration="2569000" />
+      <workItem from="1637150527806" duration="1000" />
+      <workItem from="1637151422686" duration="1616000" />
+      <workItem from="1637232457328" duration="1499000" />
+      <workItem from="1638146565254" duration="3818000" />
+      <workItem from="1638579991001" duration="4216000" />
+      <workItem from="1638751052007" duration="510000" />
+      <workItem from="1638751647762" duration="978000" />
+      <workItem from="1638752751253" duration="2221000" />
+      <workItem from="1639307874151" duration="4343000" />
+      <workItem from="1639358493944" duration="290000" />
+      <workItem from="1665391509649" duration="1688000" />
+      <workItem from="1665479541618" duration="2305000" />
+      <workItem from="1665571581531" duration="1572000" />
+      <workItem from="1665577096361" duration="4166000" />
+      <workItem from="1665646117267" duration="5125000" />
+      <workItem from="1665668626183" duration="956000" />
+      <workItem from="1665735847848" duration="6524000" />
+      <workItem from="1665750025804" duration="1918000" />
+      <workItem from="1665803557761" duration="30000" />
+      <workItem from="1665806042294" duration="618000" />
+      <workItem from="1665923096752" duration="5531000" />
+      <workItem from="1665993679891" duration="6845000" />
+      <workItem from="1666167614658" duration="4127000" />
+      <workItem from="1666247485846" duration="10070000" />
+      <workItem from="1666270620576" duration="303000" />
+      <workItem from="1666271402819" duration="1443000" />
+      <workItem from="1666420565869" duration="10531000" />
+      <workItem from="1666431296933" duration="3005000" />
+      <workItem from="1666439663468" duration="111000" />
+      <workItem from="1666520681782" duration="2457000" />
+      <workItem from="1666571998181" duration="68000" />
+      <workItem from="1666597420209" duration="1978000" />
+      <workItem from="1666751117007" duration="19125000" />
+      <workItem from="1667563568569" duration="6016000" />
+      <workItem from="1667629629692" duration="6430000" />
+      <workItem from="1667706192505" duration="13744000" />
+      <workItem from="1667816642624" duration="6204000" />
+      <workItem from="1667870094263" duration="1006000" />
+      <workItem from="1667893755702" duration="12836000" />
+      <workItem from="1667953865733" duration="21360000" />
+      <workItem from="1668039637394" duration="13579000" />
+      <workItem from="1668125685619" duration="5000" />
+      <workItem from="1668125741726" duration="12286000" />
+      <workItem from="1668216576851" duration="6030000" />
+      <workItem from="1668300625598" duration="16116000" />
+      <workItem from="1668385015148" duration="8703000" />
+      <workItem from="1668420750897" duration="1919000" />
+      <workItem from="1668471600440" duration="8809000" />
+      <workItem from="1668558458264" duration="6241000" />
+      <workItem from="1668595874259" duration="6968000" />
+      <workItem from="1668753920793" duration="14937000" />
+      <workItem from="1668817658655" duration="16777000" />
+      <workItem from="1668903938904" duration="16928000" />
+      <workItem from="1668989836835" duration="13002000" />
+      <workItem from="1669076150208" duration="28746000" />
+      <workItem from="1669162638855" duration="35709000" />
+      <workItem from="1669255551535" duration="4159000" />
+      <workItem from="1669340613299" duration="330000" />
+      <workItem from="1669343871748" duration="1227000" />
+      <workItem from="1669357182542" duration="4694000" />
+      <workItem from="1669373933531" duration="38000" />
+      <workItem from="1669430439202" duration="7316000" />
+      <workItem from="1669514706954" duration="8261000" />
+      <workItem from="1669532437091" duration="15978000" />
+      <workItem from="1669594846061" duration="26137000" />
+      <workItem from="1669681082381" duration="11638000" />
+      <workItem from="1669882271399" duration="30976000" />
+      <workItem from="1670035122852" duration="15382000" />
+      <workItem from="1670326108876" duration="11746000" />
+      <workItem from="1670374967102" duration="8374000" />
+      <workItem from="1670462039834" duration="9691000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/house/house/dao/HouseMapper.java</url>
+          <line>31</line>
+          <properties class="com.house.house.dao.HouseMapper" method="addNewHouse">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/house/house/dao/HouseMapper.java</url>
+          <line>19</line>
+          <properties class="com.house.house.dao.HouseMapper" method="findHomeInfoAudit">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/house/house/dao/HouseMapper.java</url>
+          <line>207</line>
+          <properties class="com.house.house.dao.HouseMapper" method="search">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/house/house/service/IOrderService.java</url>
+          <line>21</line>
+          <properties class="com.house.house.service.IOrderService" method="findAllOrder">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/house/house/service/impl/OrderServiceImpl.java</url>
+          <line>16</line>
+          <properties field="mapper" class="com.house.house.service.impl.OrderServiceImpl" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

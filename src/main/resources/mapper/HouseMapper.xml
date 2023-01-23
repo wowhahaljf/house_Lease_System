@@ -9,6 +9,8 @@
 		<result column="house_floor" jdbcType="VARCHAR" property="houseFloor"/>
 		<result column="house_type" jdbcType="VARCHAR" property="houseType"/>
 		<result column="house_price" jdbcType="VARCHAR" property="housePrice"/>
+		<result column="unit" jdbcType="VARCHAR" property="unit"/>
+		<result column="deposit" jdbcType="VARCHAR" property="deposit"/>
 		<result column="house_address" jdbcType="VARCHAR" property="houseAddress"/>
 		<result column="house_image" jdbcType="VARCHAR" property="houseImage"/>
 		<result column="community_name" jdbcType="VARCHAR" property="communityName"/>
@@ -82,6 +84,7 @@
 			house_area,
 			house_type,
 			house_price,
+			unit,
 			house_floor,
 			house_address,
 			house_image
@@ -96,6 +99,8 @@
 			h_id,
 			house_desc,
 			house_price,
+		    unit,
+			deposit,
 			house_type,
 			house_area,
 			house_floor,
@@ -128,6 +133,8 @@
 			#{houseFloor},
 			#{houseType},
 			#{housePrice},
+		 	#{unit},
+		 	#{deposit},
 			#{houseAddress},
 			#{houseImage},
 			#{communityName},
@@ -165,6 +172,8 @@
 			house_floor = #{houseFloor},
 			house_type = #{houseType},
 			house_price = #{housePrice},
+		    unit=#{unit},
+			deposit=#{deposit},
 			house_address = #{houseAddress},
 			house_oriented = #{houseOriented},
 			house_linkman = #{houseLinkMan},
@@ -181,6 +190,7 @@
 			house_floor = #{houseFloor},
 			house_type = #{houseType},
 			house_price = #{housePrice},
+			unit=#{unit},
 			house_address = #{houseAddress},
 			house_image = #{houseImage},
 			house_oriented = #{houseOriented},
@@ -459,6 +469,11 @@
 	<select id="getUserCollection" resultType="com.house.house.entity.UserHouseCollection" parameterType="int" resultMap="HouseCollection">
 		select * from t_user_house_collection
 		where u_id=#{uid} and is_col=1
+	</select>
+
+	<select id="getHouseLikeNum" resultType="com.house.house.entity.userHouseLike" parameterType="int">
+		select * from t_user_house_like
+		where h_id=#{id}
 	</select>
 
 	<delete id="deleteCol" parameterType="int">

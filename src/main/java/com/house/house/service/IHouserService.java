@@ -26,6 +26,13 @@ public interface IHouserService {
 	 * @return
 	 */
 	public House findHouseDetailsById(int id);
+
+	/**
+	 * 查看房屋点赞数量
+	 * @param id
+	 * @return
+	 */
+	public List<userHouseLike> getHouseLikeNum(int id);
 	/**
 	 * 添加房源信息
 	 * @param house

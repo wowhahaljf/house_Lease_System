@@ -276,4 +276,6 @@ public interface HouseMapper {
 	 * @return
 	 */
 	int deleteCol(int colId);
+
+    List<userHouseLike> getHouseLikeNum(int id);
 }

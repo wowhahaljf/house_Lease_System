@@ -8,6 +8,15 @@
 		<result column="u_phone_number" jdbcType="VARCHAR" property="uPhoneNumber"/>
 		<result column="u_nickname" jdbcType="VARCHAR" property="uNickName"/>
 	</resultMap>
+
+	<resultMap type="com.house.house.entity.Complaint" id="ComplaintMap">
+		<id column="cpl_id" jdbcType="INTEGER" property="cplId" />
+		<result column="u_id" jdbcType="INTEGER" property="uid"/>
+		<result column="h_id" jdbcType="INTEGER" property="hid"/>
+		<result column="a_id" jdbcType="INTEGER" property="aid"/>
+		<result column="cpl_content" jdbcType="VARCHAR" property="cplContent"/>
+		<result column="status" jdbcType="INTEGER" property="status"/>
+	</resultMap>
 	<!-- 登录 -->
 	<select id="login" resultMap="BasicMap" parameterType="com.house.house.entity.Users">
 		select u_id,u_name,u_password,u_phone_number,u_nickname from t_users
@@ -17,17 +26,45 @@
 	<insert id="regist" parameterType="com.house.house.entity.Users">
 		insert into t_users values(0,#{uName},#{uPassword},#{uPhoneNumber},#{uNickName})
 	</insert>
-	
+
+
 	<!-- 检查旧密码 -->
 	<select id="checkOldPwd" resultMap="BasicMap" parameterType="com.house.house.entity.Users">
 		select * from t_users where u_password = #{uPassword} and u_id = #{uID}
 	</select>
-	
+
+
 	<update id="updateUserPwd" parameterType="com.house.house.entity.Users">
 		UPDATE t_users
 		SET u_password = #{uPassword}
 		WHERE
 			u_id = #{uID}
 	</update>
-	
+    <update id="updateInfo" parameterType="com.house.house.entity.Users">
+		UPDATE t_users
+		SET u_name = #{uName} , u_phone_number = #{uPhoneNumber} , u_nickname = #{uNickName}
+		WHERE
+			u_id = #{uID}
+	</update>
+
+	<select id="checkUName"  parameterType="string" resultMap="BasicMap">
+		select * from t_users where u_name = #{uName}
+	</select>
+	<insert id="complainSubmit" parameterType="com.house.house.entity.Complaint">
+		insert into t_complain
+		values (0,
+				#{uid},
+				#{hid},
+				null,
+				#{cplContent},
+		        0
+				)
+	</insert>
+	<select id="getComplaint" parameterType="int" resultMap="ComplaintMap">
+		select * from house.t_complain
+		where u_id=#{uid} and status != 3
+	</select>
+	<update id="withdrawComplaint" parameterType="int" >
+		 update house.t_complain set status = 4 where cpl_id=#{cplId}
+	</update>
 </mapper>

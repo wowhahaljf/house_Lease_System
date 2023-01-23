@@ -65,6 +65,7 @@ public class OrderController {
 			order.sethID(Integer.parseInt(id));
 			order.setOrderUser(u.getuNickName());
 			order.setuID(u.getuID());
+
 			int n = sevice.addOrder(order);
 			if(n>0) {
 				return "OK";

@@ -1,8 +1,11 @@
 package com.house.house.dao;
 
 
+import com.house.house.entity.Complaint;
 import com.house.house.entity.Users;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
@@ -30,5 +33,25 @@ public interface UserMapper {
 	 * @return
 	 */
 	public Users checkOldPwd(Users users);
+
+	/**
+	 * 检查用户名是否占用
+	 * @param uName
+	 * @return
+	 */
+	public Users checkUName(String uName);
+	/**
+	 * 修改个人信息
+	 * @param users
+	 * @return
+	 */
+	public int updateInfo(Users users);
+
+    public int complainSubmit(Complaint complaint);
+
+
+    List<Complaint> getComplaint(int uid);
+
+	int withdrawComplaint(int cplId);
 
 }

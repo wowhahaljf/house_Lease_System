@@ -2,14 +2,14 @@ CREATE DATABASE `house`;
 
 USE `house`;
 SET FOREIGN_KEY_CHECKS = 1;
-SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT;
-SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS;
-SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION;
+SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT;
+SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS;
+SET @OLD_COLLATION_CONNECTION = @@COLLATION_CONNECTION;
 SET NAMES utf8;
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
-SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0;
+SET @OLD_UNIQUE_CHECKS = @@UNIQUE_CHECKS, UNIQUE_CHECKS = 0;
+SET @OLD_FOREIGN_KEY_CHECKS = @@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS = 0;
+SET @OLD_SQL_MODE = @@SQL_MODE, SQL_MODE = 'NO_AUTO_VALUE_ON_ZERO';
+SET @OLD_SQL_NOTES = @@SQL_NOTES, SQL_NOTES = 0;
 
 -- ----------------------------
 -- Table structure for t_admin
@@ -50,18 +50,12 @@ CREATE TABLE `t_house`
     `house_oriented`     varchar(20)   NOT NULL COMMENT '房屋朝向',
     `house_detailes_img` varchar(1000) NOT NULL COMMENT '房屋详细页面展示图片',
     `publisher`          varchar(50)   NOT NULL DEFAULT '管理员' COMMENT '发布人',
-    `contract`      varchar(1000)  NOT NULL COMMENT '房屋合同',
-    `publish_time`       datetime       DEFAULT CURRENT_TIMESTAMP COMMENT '发布时间',#CURRENT_TIMESTAMP当插入数据的时候，该字段默认值为当前时间
+    `contract`           varchar(1000) NOT NULL COMMENT '房屋合同',
+    `publish_time`       datetime               DEFAULT CURRENT_TIMESTAMP COMMENT '发布时间',#CURRENT_TIMESTAMP当插入数据的时候，该字段默认值为当前时间
     PRIMARY KEY (`h_id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 33
   DEFAULT CHARSET = utf8;
-
-
-
-
-
-
 
 
 
@@ -159,7 +153,9 @@ CREATE TABLE `t_order`
     `h_id`       int(11)     NOT NULL COMMENT '房屋租赁id',
     `u_id`       int(11)     NOT NULL COMMENT '预定用户id',
     `order_time` datetime    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `order_user` varchar(20) NOT NULL,
+    `start`      varchar(20) NOT NULL COMMENT '租房开始时间',
+    `end`        varchar(20) NOT NULL COMMENT '租房结束时间',
+    `money`      int(20)     NOT NULL COMMENT '订单金额',
     PRIMARY KEY (`o_id`),
     KEY `fk1` (`h_id`),
     KEY `fk2` (`u_id`),
@@ -170,7 +166,7 @@ CREATE TABLE `t_order`
 
     CONSTRAINT `fk2` FOREIGN KEY (`u_id`) REFERENCES `t_users` (`u_id`)
 ) ENGINE = InnoDB
-  AUTO_INCREMENT = 13
+  AUTO_INCREMENT = 1
   DEFAULT CHARSET = utf8;
 
 -- ----------------------------
@@ -278,38 +274,39 @@ CREATE TABLE `t_reply`
 DROP TABLE IF EXISTS `t_comment_like`;
 create table `t_comment_like`
 (
-    `cl_id`int(11) auto_increment NOT NULL COMMENT '点赞id',
-    `c_id` int(11) NOT NULL  COMMENT '评论id',
-    `u_id` int(11) NOT NULL  COMMENT '评论点赞者id',
+    `cl_id`       int(11) auto_increment NOT NULL COMMENT '点赞id',
+    `c_id`        int(11)                NOT NULL COMMENT '评论id',
+    `u_id`        int(11)                NOT NULL COMMENT '评论点赞者id',
     `like_status` int(2) default '0' COMMENT '点赞状态',
     primary key (`cl_id`),
     CONSTRAINT `fk8` FOREIGN KEY (`u_id`) REFERENCES `t_users` (`u_id`),
     CONSTRAINT `fk9` FOREIGN KEY (`c_id`) REFERENCES `t_comment` (`c_id`)
-)ENGINE = InnoDB
-    auto_increment=1
- DEFAULT CHARSET = utf8;
-insert into `t_comment_like` values (0,13,18,1);
+) ENGINE = InnoDB
+  auto_increment = 1
+  DEFAULT CHARSET = utf8;
+insert into `t_comment_like`
+values (0, 13, 18, 1);
 
 DROP TABLE IF EXISTS `t_reply_like`;
 
 create table `t_reply_like`
 (
-    `rl_id` int(11) auto_increment NOT NULL  COMMENT '回复点赞id',
-    `r_id` int(11) NOT NULL  COMMENT '评论id',
-    `u_id` int(11) NOT NULL  COMMENT '评论点赞者id',
+    `rl_id`       int(11) auto_increment NOT NULL COMMENT '回复点赞id',
+    `r_id`        int(11)                NOT NULL COMMENT '评论id',
+    `u_id`        int(11)                NOT NULL COMMENT '评论点赞者id',
     `like_status` int(2) default '0' COMMENT '点赞状态',
     primary key (`rl_id`),
     CONSTRAINT `fk10` FOREIGN KEY (`u_id`) REFERENCES `t_users` (`u_id`),
     CONSTRAINT `fk11` FOREIGN KEY (`r_id`) REFERENCES `t_reply` (`r_id`)
-)ENGINE = InnoDB
- DEFAULT CHARSET = utf8;
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT;
-SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS;
-SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION;
-SET SQL_NOTES=@OLD_SQL_NOTES;
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
+SET SQL_MODE = @OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS = @OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS;
+SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT;
+SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS;
+SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION;
+SET SQL_NOTES = @OLD_SQL_NOTES;
 use house;
 
 
@@ -318,26 +315,46 @@ use house;
 -- Table structure for t_user_house_like
 -- ----------------------------
 drop table if exists `t_user_house_like`;
-create table `t_user_house_like`(
-    `u_like_id` int(11) auto_increment not null comment '房屋点赞id' primary key ,
-    `u_id` int(11)  not null comment '用户id',
-    `h_id` int(11)  not null comment '房屋id',
-    `is_like` int(11)  not null default '0' comment '点赞状态',
-    constraint `u_uh_like` foreign key (`u_id`) references `t_users`(`u_id`),
-    constraint `h_uh_like` foreign key (`h_id`) references `t_house`(`h_id`)
-)ENGINE = InnoDB
- DEFAULT CHARSET = utf8;
+create table `t_user_house_like`
+(
+    `u_like_id` int(11) auto_increment not null comment '房屋点赞id' primary key,
+    `u_id`      int(11)                not null comment '用户id',
+    `h_id`      int(11)                not null comment '房屋id',
+    `is_like`   int(11)                not null default '0' comment '点赞状态',
+    constraint `u_uh_like` foreign key (`u_id`) references `t_users` (`u_id`),
+    constraint `h_uh_like` foreign key (`h_id`) references `t_house` (`h_id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 
 -- ----------------------------
 -- Table structure for t_user_house_collection
 -- ----------------------------
 drop table if exists `t_user_house_collection`;
-create table `t_user_house_collection`(
-    `u_col_id` int(11) auto_increment not null comment '房屋收藏id' primary key ,
-    `u_id` int(11) not null comment '用户id',
-    `h_id` int(11) not null comment '房屋id',
-    `is_col` int(11) not null comment '房屋id',
-    constraint `u_uh_col` foreign key (`u_id`) references `t_users`(`u_id`),
-    constraint `h_uh_col` foreign key (`h_id`) references `t_house`(`h_id`)
-)ENGINE = InnoDB
- DEFAULT CHARSET = utf8;
+create table `t_user_house_collection`
+(
+    `u_col_id` int(11) auto_increment not null comment '房屋收藏id' primary key,
+    `u_id`     int(11)                not null comment '用户id',
+    `h_id`     int(11)                not null comment '房屋id',
+    `is_col`   int(11)                not null comment '房屋id',
+    constraint `u_uh_col` foreign key (`u_id`) references `t_users` (`u_id`),
+    constraint `h_uh_col` foreign key (`h_id`) references `t_house` (`h_id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+-- Table structure for t_complain
+-- ----------------------------
+drop table if exists `t_complain`;
+create table `t_complain`
+(
+    `cpl_id` int(11) auto_increment not null comment '房屋投诉id' primary key,
+    `u_id`     int(11)                not null comment '用户id',
+    `h_id`     int(11)                not null comment '房屋id',
+    `a_id`     int(11)                not null comment '管理员id',
+    `cpl_content`   varchar(200)      not null comment '投诉内容',
+    `status`   int(11)                not null comment '处理状态',
+    constraint `cpl_user` foreign key (`u_id`) references `t_users` (`u_id`),
+    constraint `cpl_house` foreign key (`h_id`) references `t_house` (`h_id`),
+    constraint `cpl_admin` foreign key (`a_id`) references `t_admin` (`id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;

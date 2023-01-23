@@ -49,4 +49,12 @@ public class Admin {
 		super();
 	}
 
+	@Override
+	public String toString() {
+		return "Admin{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				", userpwd='" + userpwd + '\'' +
+				'}';
+	}
 }

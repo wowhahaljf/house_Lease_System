@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * 监听器类:主要任务是用ServletRequest将我们的HttpSession携带过去
- * @author 侯叶飞
+ *
  */
 @Component //此注解千万千万不要忘记，它的主要作用就是将这个监听器纳入到Spring容器中进行管理,相当于注册监听吧
 @Slf4j

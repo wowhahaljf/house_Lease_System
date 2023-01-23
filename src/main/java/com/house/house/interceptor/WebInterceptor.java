@@ -56,8 +56,14 @@ public class WebInterceptor implements HandlerInterceptor {
         HttpSession session = request.getSession();
         Users u= (Users) session.getAttribute("loginUser");
         Admin admin = (Admin) session.getAttribute("Admin");
-        System.out.println(u);
+
+
         if(u!=null||admin!=null){
+            if(u!=null){
+                System.out.println("登录的账号---->"+u);
+            }else{
+                System.out.println("登录的账号---->"+admin);
+            }
             return true;
         }
 

@@ -3,13 +3,11 @@ package com.house.house.service.impl;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.house.house.dao.HouseMapper;
 import com.house.house.entity.*;
 import com.house.house.service.IHouserService;
 
-import org.apache.catalina.mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,6 +53,11 @@ public class HouserServiceImpl implements IHouserService {
 	@Override
 	public House findHouseDetailsById(int id) {
 		return dao.findHouseDetailsById(id);
+	}
+
+	@Override
+	public List<userHouseLike> getHouseLikeNum(int id) {
+		return dao.getHouseLikeNum(id);
 	}
 
 	@Override

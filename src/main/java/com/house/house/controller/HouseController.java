@@ -26,7 +26,6 @@ public class HouseController {
 	@RequestMapping("/search")
 	@ResponseBody
 	public UserHouseData searchHouse(String input){
-
 		List<House> list = service.searchHouse(input);
 		if(list.size()>0){
 			return new UserHouseData(1,"搜索成功",list.size(),list);
@@ -50,12 +49,10 @@ public class HouseController {
 		Users u = (Users) request.getSession().getAttribute("loginUser");
 //		Users u1  = (Users) request.getSession().getAttribute("uID");
 		String publisher = u.getuName();
-		System.out.println(publisher);
 		p.setPublisher(publisher);
 		p.setLimit(limit);
 		p.setPage((page - 1) * limit);//表记录的起始位置=(当前页数-1)*每页大小
 		List<House> list = service.findHouseByUser(p);
-		System.out.println(list);
 		int count=service.countUserHouse(p);
 		UserHouseData data = new UserHouseData(0, "200",count, list);
 		return data;

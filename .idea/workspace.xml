@@ -4,7 +4,80 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="044baad9-970d-4d7f-9948-a6a207b16712" name="Default Changelist" comment="" />
+    <list default="true" id="044baad9-970d-4d7f-9948-a6a207b16712" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_collections_google_collections_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/house/house/entity/Complaint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/house/house/entity/ComplaintInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/house/house/service/impl/LikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/house/house/utils/DynamicBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/house/house/utils/RedisKeyUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/house/house/utils/ReflectUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05ccfd06-ad3b-43a9-8a36-a7fb49e1ed39.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/05ccfd06-ad3b-43a9-8a36-a7fb49e1ed39.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/house-rent-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/house-rent-master.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWebHouse.sql" beforeDir="false" afterPath="$PROJECT_DIR$/JavaWebHouse.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/Listener/RequestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/Listener/RequestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/WymApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/WymApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/config/redisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/config/redisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/controller/AddHouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/controller/AddHouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/controller/HouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/controller/HouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/controller/HouseDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/controller/HouseDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/dao/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/dao/AdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/dao/HouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/dao/HouseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/entity/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/entity/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/entity/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/interceptor/WebInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/interceptor/WebInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/service/IAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/service/IAdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/service/IHouserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/service/IHouserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/service/impl/HouserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/service/impl/HouserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/house/house/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/house/house/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HouseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/WymApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/WymApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/config/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/config/WebSocketConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/config/redisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/config/redisConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/controller/AddHouseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/controller/AddHouseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/controller/HouseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/controller/HouseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/controller/HouseDetailsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/controller/HouseDetailsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/dao/AdminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/dao/AdminMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/dao/HouseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/dao/HouseMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/dao/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/entity/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/entity/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/entity/House.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/entity/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/entity/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/interceptor/WebInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/interceptor/WebInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/service/IAdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/service/IAdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/service/IHouserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/service/IHouserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/service/impl/AdminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/service/impl/HouserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/service/impl/HouserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/house/house/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/house/house/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AdminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/HouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/HouseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/house-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/house-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/house-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/house-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.house.house.WymApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.house.house.WymApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.house.house.WymApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.house.house.WymApplicationTests.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +162,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.52068967" />
@@ -220,12 +294,12 @@
     </configuration>
     <list>
       <item itemvalue="Database Script.JavaWebHouse.sql" />
-      <item itemvalue="Maven.wym [spring-boot:run]" />
-      <item itemvalue="Spring Boot.WymApplication" />
       <item itemvalue="JUnit.WymApplicationTests.contextLoads" />
       <item itemvalue="JUnit.WymApplicationTests" />
       <item itemvalue="JUnit.WymApplicationTests.testSaveUser" />
       <item itemvalue="JUnit.WymApplicationTests.test3" />
+      <item itemvalue="Maven.wym [spring-boot:run]" />
+      <item itemvalue="Spring Boot.WymApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -323,7 +397,26 @@
       <workItem from="1670035122852" duration="15382000" />
       <workItem from="1670326108876" duration="11746000" />
       <workItem from="1670374967102" duration="8374000" />
-      <workItem from="1670462039834" duration="27130000" />
+      <workItem from="1670462039834" duration="27929000" />
+      <workItem from="1670843381072" duration="9900000" />
+      <workItem from="1670896474663" duration="5917000" />
+      <workItem from="1671019220593" duration="5185000" />
+      <workItem from="1671085338081" duration="14380000" />
+      <workItem from="1672235537565" duration="720000" />
+      <workItem from="1672276426412" duration="1078000" />
+      <workItem from="1672652863604" duration="18994000" />
+      <workItem from="1672881762716" duration="8160000" />
+      <workItem from="1673002855114" duration="5172000" />
+      <workItem from="1673093219854" duration="4116000" />
+      <workItem from="1673190081287" duration="1324000" />
+      <workItem from="1673266327926" duration="9580000" />
+      <workItem from="1673396752157" duration="11442000" />
+      <workItem from="1673490977516" duration="1706000" />
+      <workItem from="1673575459957" duration="6366000" />
+      <workItem from="1673874474984" duration="7807000" />
+      <workItem from="1674019506915" duration="21606000" />
+      <workItem from="1674088487329" duration="16535000" />
+      <workItem from="1674436212013" duration="1952000" />
     </task>
     <task id="LOCAL-00001" summary="上传">
       <created>1670503728728</created>
@@ -339,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670678480377</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="更新">
+      <created>1670680308259</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670680308259</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +467,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="上传" />
@@ -408,11 +509,25 @@
           </properties>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/house/house/controller/HouseDetailsController.java</url>
+          <line>37</line>
+          <properties class="com.house.house.controller.HouseDetailsController" method="getHouseDetail">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/house/house/service/impl/OrderServiceImpl.java</url>
           <line>16</line>
           <properties field="mapper" class="com.house.house.service.impl.OrderServiceImpl" />
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/house/house/service/impl/UserServiceImpl.java</url>
+          <line>20</line>
+          <properties field="mapper" class="com.house.house.service.impl.UserServiceImpl" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

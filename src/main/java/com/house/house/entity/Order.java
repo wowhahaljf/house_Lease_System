@@ -14,6 +14,34 @@ public class Order {
 	private Date orderTime;
 	private String orderUser;
 
+	private String start;
+	private String end;
+	private int money;
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public String getEnd() {
+		return end;
+	}
+
+	public void setEnd(String end) {
+		this.end = end;
+	}
+
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+
 	public int getuID() {
 		return uID;
 	}

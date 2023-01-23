@@ -143,6 +143,7 @@ public class AddHouseController {
 		}
 		house.setHouseImage(simplePath);
 		house.setHouseDetailsImg(house.getHouseDetailsImg());
+		System.out.println(house);
 		int n = service.addNewHouse(house);
 		if(n>0) {
 			detailsPath.delete(0,detailsPath.length());

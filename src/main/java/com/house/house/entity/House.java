@@ -12,10 +12,21 @@ public class House {
 	private String houseArea;
 	private String houseFloor;
 	private String houseType;
-	private int housePrice;
+	private String housePrice;
+	private String unit;
+	private int deposit;
 	private String houseAddress;
 	private String houseImage;
 	private String communityName;
+
+	public String getUnit() {
+		return unit;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
 	private String houseLinkMan;
 	private String houseOriented;
 	private String houseDetailsImg;
@@ -27,6 +38,13 @@ public class House {
 	private String fileName;
 	private int status;
 
+	public int getDeposit() {
+		return deposit;
+	}
+
+	public void setDeposit(int deposit) {
+		this.deposit = deposit;
+	}
 	public int getStatus() {
 		return status;
 	}
@@ -87,10 +105,10 @@ public class House {
 	public void setHouseType(String houseType) {
 		this.houseType = houseType;
 	}
-	public int getHousePrice() {
+	public String getHousePrice() {
 		return housePrice;
 	}
-	public void setHousePrice(int housePrice) {
+	public void setHousePrice(String housePrice) {
 		this.housePrice = housePrice;
 	}
 	public String getHouseAddress() {
@@ -142,8 +160,8 @@ public class House {
 		this.publishTime = publishTime;
 	}
 	public House(String houseDesc, String houseModel, String houseArea, String houseFloor, String houseType,
-			int housePrice, String houseAddress, String houseImage, String communityName, String houseLinkMan,
-			String houseOriented, String houseDetailsImg, String publisher, Date publishTime) {
+				 String housePrice, String houseAddress, String houseImage, String communityName, String houseLinkMan,
+				 String houseOriented, String houseDetailsImg, String publisher, Date publishTime) {
 		super();
 		this.houseDesc = houseDesc;
 		this.houseModel = houseModel;
@@ -161,8 +179,8 @@ public class House {
 		this.publishTime = publishTime;
 	}
 	public House(int hID, String houseDesc, String houseModel, String houseArea, String houseFloor, String houseType,
-			int housePrice, String houseAddress, String houseImage, String communityName, String houseLinkMan,
-			String houseOriented, String houseDetailsImg, String publisher, Date publishTime) {
+				 String housePrice, String houseAddress, String houseImage, String communityName, String houseLinkMan,
+				 String houseOriented, String houseDetailsImg, String publisher, Date publishTime) {
 		super();
 		this.hID = hID;
 		this.houseDesc = houseDesc;

@@ -1,6 +1,7 @@
 com\house\house\entity\Admin.class
 com\house\house\entity\UserOrderData.class
 com\house\house\controller\UserController.class
+com\house\house\entity\Complaint.class
 com\house\house\entity\Page.class
 com\house\house\entity\House.class
 com\house\house\entity\Order.class

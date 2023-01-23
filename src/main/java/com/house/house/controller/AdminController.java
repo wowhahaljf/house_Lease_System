@@ -6,12 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.house.house.entity.Admin;
-import com.house.house.entity.House;
-import com.house.house.entity.Page;
-import com.house.house.entity.UserData;
-import com.house.house.entity.UserHouseData;
-import com.house.house.entity.Users;
+import com.house.house.entity.*;
 import com.house.house.service.IAdminService;
 import com.house.house.service.IHouserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,13 +43,17 @@ public class AdminController {
 	 */
 	@RequestMapping("/adminAccess")
 	@ResponseBody
-	public String adminAccess(String username, String userpwd, HttpServletRequest req) {
+	public Msg adminAccess(String username, String userpwd, HttpServletRequest req) {
 		Admin admin = new Admin(username, userpwd);
 		Admin adminAccess = service.adminAccess(admin);//[从数据库中查询用户名和密码一致的用户]
-		req.getSession().setAttribute("Admin", adminAccess);
-		if (adminAccess != null)
-			return "OK";//[如果返回是OK，则会回调，重新跳转到toAdminHomePage]
-		return "FAIL";
+
+		if (adminAccess != null){
+			System.out.println(adminAccess);
+			String aName = adminAccess.getUsername();
+			req.getSession().setAttribute("Admin", adminAccess);
+			return new Msg(200,adminAccess,aName+"登录成功！");
+		}
+		return new Msg(400,null,"登录失败");
 	}
 
 	/**
@@ -85,6 +84,19 @@ public class AdminController {
 		}
 		return "FAIL";
 	}
+
+//	/**
+//	 * 修改管理员密码
+//	 * @param id
+//	 * @param newPwd
+//	 * @param oldPwd
+//	 * @return
+//	 */
+//	@PostMapping("/updateAdminPwd")
+//	public Msg updateAdminPwd(String id,String newPwd,String oldPwd){
+//		service.updateAdminPwd()
+//	}
+
 
 	@RequestMapping("/toAdminHomePage")
 	public String toAdminHomePage() {
@@ -280,14 +292,24 @@ public class AdminController {
 		return "welcome01";
 	}
 
+	/**
+	 * 修改管理员密码
+	 * @param request
+	 * @param oldpwd
+	 * @param newpwd
+	 * @param newpwdagain
+	 * @return
+	 */
 	@RequestMapping("/updateAdminPwd")
 	@ResponseBody
 	public String updateAdminPwd(HttpServletRequest request,String oldpwd, String newpwd, String newpwdagain) {
 		Admin admin = new Admin();
 		Admin adminSession = (Admin) request.getSession().getAttribute("Admin");
+		System.out.println(adminSession);
 		admin.setId(adminSession.getId());
 		admin.setUserpwd(oldpwd);
 		Admin checkAdminPwd = service.checkAdminPwd(admin);
+		System.out.println(checkAdminPwd);
 		if (checkAdminPwd == null) {
 			return "ERROR";
 		}
@@ -302,6 +324,7 @@ public class AdminController {
 			return "OK";
 		return "FAIL";
 	}
+
 
 	/**
 	 * 审核房源
@@ -331,6 +354,52 @@ public class AdminController {
 		}
 		return "FAIL";
 	}
+	/**
+	 * 获取所有投诉
+	 * @param
+	 * @return
+	 */
+	@RequestMapping("/getAllComplaint")
+	@ResponseBody
+	public Msg getAllComplaint(int page, int limit){
+		return service.getAllComplaint(page,limit);
+	}
 
+	/**
+	 * 更改投诉状态
+	 * @param cplId
+	 * @param aid
+	 * @param status
+	 * @return
+	 */
+	@RequestMapping("/changeStatus")
+	@ResponseBody
+	public Msg changeStatus(int cplId,String status,HttpServletRequest request){
+		Admin admin = (Admin) request.getSession().getAttribute("Admin");
+		int s = Integer.parseInt(status);
+		return service.changeStatus(cplId,admin.getId(),s);
+	}
 
+	/**
+	 * 删除投诉
+	 * @param cplId
+	 * @return
+	 */
+	@RequestMapping("/deleteComplaint")
+	@ResponseBody
+	public Msg deleteComplaint(int cplId){
+		return service.deleteComplaint(cplId);
+	}
+
+	/**
+	 * 管理查看自己管理的投诉
+	 * @param
+	 * @return
+	 */
+	@RequestMapping("/findComplaintByAdmin")
+	@ResponseBody
+	public Msg findComplaintByAdmin(int limit,int page,HttpServletRequest request){
+		Admin admin = (Admin) request.getSession().getAttribute("Admin");
+		return service.findComplaintByAdmin(limit,page,admin.getId());
+	}
 }

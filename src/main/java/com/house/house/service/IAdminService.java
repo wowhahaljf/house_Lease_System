@@ -1,10 +1,7 @@
 package com.house.house.service;
 
 
-import com.house.house.entity.Admin;
-import com.house.house.entity.House;
-import com.house.house.entity.Page;
-import com.house.house.entity.Users;
+import com.house.house.entity.*;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -109,4 +106,35 @@ public interface IAdminService {
 	 * @return
 	 */
 	public int auditHouseNoPass(int hid);
+
+	/**
+	 * 分页查询用户投诉
+	 * @param page
+	 * @param limit
+	 * @return
+	 */
+    Msg getAllComplaint(int page, int limit);
+
+	/**
+	 * 更改状态
+	 * @param cplId
+	 * @param aid
+	 * @param status
+	 * @return
+	 */
+    Msg changeStatus(int cplId, int aid, int status);
+
+	/**
+	 * 删除投诉
+	 * @param cplId
+	 * @return
+	 */
+	Msg deleteComplaint(int cplId);
+
+	/**
+	 * 管理查看自己管理的投诉
+	 * @param
+	 * @return
+	 */
+	Msg findComplaintByAdmin(int limit,int page,int aid);
 }

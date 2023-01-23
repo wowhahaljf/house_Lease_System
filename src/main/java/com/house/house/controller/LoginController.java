@@ -3,6 +3,7 @@ package com.house.house.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.house.house.entity.Msg;
 import com.house.house.entity.Users;
 import com.house.house.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,22 +43,30 @@ public class LoginController {
 		}
 		return "FAIL";
 	}
+
+	/**
+	 * 用户登录
+	 * @param username
+	 * @param password
+	 * @param req
+	 * @return
+	 */
 	@RequestMapping("/login1")
 	@ResponseBody
-	public Users toCustomerPage1(String username,String password,HttpServletRequest req) {
+	public Msg toCustomerPage1(String username, String password, HttpServletRequest req) {
 		Users user1 = new Users();
 		String pwd = DigestUtils.md5DigestAsHex(password.getBytes());
-
 		user1.setuName(username);
 		user1.setuPassword(pwd);
 		Users loginUser = mapper.login(user1);
-		String name = loginUser.getuName();
+
 		if(loginUser!=null) {
+			String name = loginUser.getuName();
 			req.getSession().setAttribute("loginUser",loginUser);
 			req.getSession().setAttribute("loginUserName",name);
-			return loginUser;
+			return new Msg(200,loginUser,name+"登录成功");
 		}
-		return null;
+		return new Msg(400,null,"登录失败");
 	}
 	
 	@RequestMapping("/signout")

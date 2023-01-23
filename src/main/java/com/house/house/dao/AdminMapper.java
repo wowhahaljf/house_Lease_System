@@ -1,9 +1,6 @@
 package com.house.house.dao;
 
-import com.house.house.entity.Admin;
-import com.house.house.entity.House;
-import com.house.house.entity.Page;
-import com.house.house.entity.Users;
+import com.house.house.entity.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -111,4 +108,32 @@ public interface AdminMapper {
 	 * @return
 	 */
 	public int auditHouseNoPass(int hid);
+
+	/**
+	 * 查询名字
+	 * @param aid
+	 * @return
+	 */
+	public String checkAdminName(int aid);
+
+	/**
+	 * 获取所有投诉
+	 * @param page
+	 * @return
+	 */
+	List<Complaint> getAllComplaint(Page page);
+
+	/**
+	 * 获取数量
+	 * @return
+	 */
+	int getAllComplaintCount();
+	
+    int changeStatus(int cplId, int aid, int status);
+
+	int deleteComplaint(int cplId);
+
+    List<Complaint> findComplaintByAdmin(Page p);
+
+	int findComplaintByAdminCount(int aid);
 }

@@ -14,6 +14,7 @@ import com.house.house.service.IHouserService;
 import com.house.house.service.impl.LikeService;
 import com.house.house.utils.ReflectUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +29,8 @@ public class HouseDetailsController {
     @Autowired
     private LikeService likeService;
 
+    @Autowired
+    private RedisTemplate<String,Object> redisTemplate;
     /**
      * 获取首页房源信息
      *
@@ -104,6 +107,7 @@ public class HouseDetailsController {
     @ResponseBody
     public Msg likeHouse1(int hid, HttpServletRequest req) {
         Users user = (Users) req.getSession().getAttribute("loginUser");
+        redisTemplate.
         int res = likeService.like(user.getuID(), "houselike", hid);
         if (res == 0) {
             return new Msg(200, res, "取消点赞");

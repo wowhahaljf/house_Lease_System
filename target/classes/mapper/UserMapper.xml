@@ -64,7 +64,12 @@
 		select * from house.t_complain
 		where u_id=#{uid} and status != 3
 	</select>
+	<select id="getUser" resultMap="BasicMap" parameterType="int">
+		select u_phone_number from t_users
+		where u_id=#{uID}
+	</select>
 	<update id="withdrawComplaint" parameterType="int" >
 		 update house.t_complain set status = 4 where cpl_id=#{cplId}
 	</update>
+
 </mapper>

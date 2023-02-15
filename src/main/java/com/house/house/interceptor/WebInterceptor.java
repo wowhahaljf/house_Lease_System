@@ -29,6 +29,7 @@ public class WebInterceptor implements HandlerInterceptor {
         String uri=request.getRequestURI();
         log.info("拦截--------->"+uri);
         String []uris=new String[]{
+                "/",
                 "/HomePage01",
                 "/getCommentInfo",
                 "/getReplyLikeInfo",
@@ -40,7 +41,9 @@ public class WebInterceptor implements HandlerInterceptor {
                 "/findHousePriceOrderByDesc",
                 "/findHousrOrderByDesc",
                 "/findHousePriceOrderByAsc",
-                "/search**"
+                "/search**",
+                "/getImageVerifyCode.do",
+                "/verifyImageCode.do"
         };
 
         if(check(uri,uris)){

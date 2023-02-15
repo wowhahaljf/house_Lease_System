@@ -153,9 +153,11 @@ CREATE TABLE `t_order`
     `h_id`       int(11)     NOT NULL COMMENT '房屋租赁id',
     `u_id`       int(11)     NOT NULL COMMENT '预定用户id',
     `order_time` datetime    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `start`      varchar(20) NOT NULL COMMENT '租房开始时间',
-    `end`        varchar(20) NOT NULL COMMENT '租房结束时间',
+    `order_user` varchar(20)    NOT NULL COMMENT '预定用户名',
+    `start`      datetime NOT NULL COMMENT '租房开始时间',
+    `end`        datetime NOT NULL COMMENT '租房结束时间',
     `money`      int(20)     NOT NULL COMMENT '订单金额',
+    `status`      int(20)    NOT NULL DEFAULT '0' COMMENT '订单状态',
     PRIMARY KEY (`o_id`),
     KEY `fk1` (`h_id`),
     KEY `fk2` (`u_id`),
@@ -356,5 +358,16 @@ create table `t_complain`
     constraint `cpl_user` foreign key (`u_id`) references `t_users` (`u_id`),
     constraint `cpl_house` foreign key (`h_id`) references `t_house` (`h_id`),
     constraint `cpl_admin` foreign key (`a_id`) references `t_admin` (`id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
+-- ----------------------------
+-- Table structure for t_complain
+-- ----------------------------
+drop table if exists `t_house_like_number`;
+create table `t_house_like_number`
+(
+    `h_id`     int(11)                not null comment '房屋id',
+    `number`   int(11)                not null comment '点赞数量',
+    constraint `h_number` foreign key (`h_id`) references `t_house` (`h_id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;

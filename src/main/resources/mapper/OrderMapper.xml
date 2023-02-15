@@ -4,8 +4,13 @@
 	<resultMap type="com.house.house.entity.Order" id="BasicMap">
 		<id column="o_id" jdbcType="INTEGER" property="oID" />
 		<result column="h_id" jdbcType="VARCHAR" property="hID"/>
+		<result column="u_id" jdbcType="VARCHAR" property="uID"/>
 		<result column="order_time" jdbcType="VARCHAR" property="orderTime"/>
 		<result column="order_user" jdbcType="VARCHAR" property="orderUser"/>
+		<result column="start" jdbcType="VARCHAR" property="start"/>
+		<result column="end" jdbcType="VARCHAR" property="end"/>
+		<result column="money" jdbcType="INTEGER" property="money"/>
+		<result column="status" jdbcType="INTEGER" property="status"/>
 	</resultMap>
 	
 	<resultMap type="com.house.house.entity.UserOrder" id="UserOrderMapper">
@@ -24,13 +29,20 @@
 		<result column="community_name" jdbcType="INTEGER" property="communityName"/>
 		<result column="house_linkman" jdbcType="INTEGER" property="houseLinkMan"/>
 		<result column="house_oriented" jdbcType="INTEGER" property="houseOriented"/>
-		<result column="publisher" jdbcType="VARCHAR" property="publisher"/>
+		<result column="start" jdbcType="VARCHAR" property="start"/>
+		<result column="end" jdbcType="VARCHAR" property="end"/>
+		<result column="money" jdbcType="INTEGER" property="money"/>
+		<result column="status" jdbcType="INTEGER" property="status"/>
 	</resultMap>
 	<!-- 添加订单信息 -->
 	<insert id="addOrder" parameterType="com.house.house.entity.Order">
-		insert into t_order values(0,#{hID},#{uID},NOW(),#{orderUser})
+		insert into t_order values(0,#{hID},#{uID},NOW(),#{orderUser},#{start},#{end},#{money},0  )
 	</insert>
-	<!-- 查询所有订单信息 -->
+<!--	确认订单-->
+    <update id="processOrder" parameterType="int" >
+		update  t_order set house.t_order.status = 1 where o_id=#{oID}
+	</update>
+    <!-- 查询所有订单信息 -->
 	<select id="findAllOrder" parameterType="com.house.house.entity.Page" resultMap="UserOrderMapper">
 		select * from t_house h,t_order o where h.h_id=o.h_id and u_id=#{uID} limit #{page},#{limit}
 	</select>
@@ -45,5 +57,11 @@
 <!--	查看用户预定情况-->
 	<select id="getUserOrder" resultMap="BasicMap" parameterType="com.house.house.entity.Order">
 		select * from t_order where u_id=#{uid} and h_id=#{hid}
+	</select>
+	<select id="getHouseByhID" resultMap="BasicMap" parameterType="int">
+		select * from t_order where h_id=#{hID}
+	</select>
+	<select id="getOrderByOID" resultMap="BasicMap" parameterType="int">
+		select * from t_order where o_id=#{oID}
 	</select>
 </mapper>

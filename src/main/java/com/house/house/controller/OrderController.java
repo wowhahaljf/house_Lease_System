@@ -9,6 +9,7 @@ import com.house.house.service.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -58,22 +59,24 @@ public class OrderController {
 	 */
 	@RequestMapping("/addOrder")
 	@ResponseBody
-	public String addOrder(String id,HttpServletRequest request) {
+	public Msg addOrder(@RequestBody Order data, HttpServletRequest request) {
 		Users u = (Users) request.getSession().getAttribute("loginUser");
 		try {
 			Order order = new Order();
-			order.sethID(Integer.parseInt(id));
-			order.setOrderUser(u.getuNickName());
+			order.sethID(data.gethID());
+			order.setOrderUser(u.getuName());
 			order.setuID(u.getuID());
-
+			order.setStart(data.getStart());
+			order.setEnd(data.getEnd());
+			order.setMoney(data.getMoney());
 			int n = sevice.addOrder(order);
 			if(n>0) {
-				return "OK";
+				return new Msg(200,order,"预定订单提交");
 			}
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		}
-		return "FAIL";
+		return new Msg(400,null,"预定失败");
 	}
 
 	/**
@@ -107,10 +110,42 @@ public class OrderController {
 	 */
 	@RequestMapping("/deleteOrder")
 	@ResponseBody
-	public String deleteOrder(String oID) {
-		int n = sevice.deleteOrder(Integer.parseInt(oID));
-		if(n>0)
-			return "OK";
-		return "FAIL";
+	public Msg deleteOrder(String oID) {
+		return sevice.deleteOrder(Integer.parseInt(oID));
 	}
+
+	/**
+	 * 用户查看订单（发布人）
+	 * @param hID
+	 * @return
+	 */
+	@RequestMapping("/orderLook")
+	@ResponseBody
+	public Msg orderLook(int hID){
+		return sevice.orderLook(hID);
+	}
+
+	/**
+	 * 用户查询单条订单
+	 * @param oID
+	 * @return
+	 */
+	@RequestMapping("/orderLookByUser")
+	@ResponseBody
+	public Msg orderLookByUser(int oID){
+		return sevice.orderLookByUser(oID);
+	}
+
+	/**
+	 * 确认订单
+	 * @param oID
+	 * @return
+	 */
+	@RequestMapping("/processOrder")
+	@ResponseBody
+	public Msg processOrder(String oID){
+		return sevice.processOrder(Integer.parseInt(oID));
+	}
+
+
 }

@@ -284,4 +284,10 @@ public interface IHouserService {
 	 * @return
 	 */
 	Msg deleteCol(int uid,int colId);
+
+	/**
+	 * 获取排行榜信息
+	 * @return
+	 */
+	Msg getRankInfo();
 }

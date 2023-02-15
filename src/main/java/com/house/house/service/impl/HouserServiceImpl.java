@@ -286,4 +286,10 @@ public class HouserServiceImpl implements IHouserService {
 		}
 		return new Msg(404,res,"删除失败");
 	}
+
+	@Override
+	public Msg getRankInfo() {
+//		int res = dao.getHouseLikeNum();
+		return new Msg();
+	}
 }

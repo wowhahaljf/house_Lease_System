@@ -54,4 +54,6 @@ public interface UserMapper {
 
 	int withdrawComplaint(int cplId);
 
+
+	Users getUser(int uID);
 }

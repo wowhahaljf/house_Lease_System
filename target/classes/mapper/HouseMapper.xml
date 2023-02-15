@@ -473,7 +473,7 @@
 
 	<select id="getHouseLikeNum" resultType="com.house.house.entity.userHouseLike" parameterType="int">
 		select * from t_user_house_like
-		where h_id=#{id}
+		where h_id=#{id} and is_like=1
 	</select>
 
 	<delete id="deleteCol" parameterType="int">

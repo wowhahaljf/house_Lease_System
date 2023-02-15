@@ -5,6 +5,7 @@ package com.house.house.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import com.house.house.entity.House;
+import com.house.house.entity.Msg;
 import com.house.house.entity.Users;
 import com.house.house.service.IHouserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,5 +82,15 @@ public class HomePageController {
 			return list;
 		}
 		return null;
+	}
+
+	/**
+	 * 获取排行榜的信息
+	 * @return
+	 */
+	@GetMapping("/getRankInfo")
+	@ResponseBody
+	public Msg getRankInfo(){
+		return service.getRankInfo();
 	}
 }

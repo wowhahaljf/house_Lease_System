@@ -2,6 +2,7 @@ package com.house.house.service;
 
 import java.util.List;
 
+import com.house.house.entity.Msg;
 import com.house.house.entity.Order;
 import com.house.house.entity.Page;
 import com.house.house.entity.UserOrder;
@@ -31,7 +32,13 @@ public interface IOrderService {
 	  * @param oID
 	  * @return
 	  */
-	 public int deleteOrder(int oID);
+	 public Msg deleteOrder(int oID);
 
 	public Order getUserOrder (int uid,int hid);
+
+	Msg orderLook(int hID);
+
+	Msg processOrder(int oID);
+
+	Msg orderLookByUser(int oID);
 }

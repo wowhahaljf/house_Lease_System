@@ -3,6 +3,7 @@ package com.house.house.dao;
 import java.util.List;
 
 
+import com.house.house.entity.Msg;
 import com.house.house.entity.Order;
 import com.house.house.entity.Page;
 import com.house.house.entity.UserOrder;
@@ -39,4 +40,19 @@ public interface OrderMapper {
 	 * @return
 			 */
 	public Order getUserOrder (int uid,int hid);
+
+	/**
+	 * 获取房屋订单
+	 * @param hID
+	 * @return
+	 */
+	List<Order> getHouseByhID(int hID);
+
+	/**
+	 * 确认订单
+	 * @param oID
+	 */
+    int processOrder(int oID);
+
+	Order getOrderByOID(int oID);
 }
